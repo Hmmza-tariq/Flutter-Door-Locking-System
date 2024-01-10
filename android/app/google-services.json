@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "452224593971",
+    "firebase_url": "https://facial-reco-cc069-default-rtdb.firebaseio.com",
+    "project_id": "facial-reco-cc069",
+    "storage_bucket": "facial-reco-cc069.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452224593971:android:cc6effac1b2dd916f03346",
+        "android_client_info": {
+          "package_name": "com.hexagone.door_locking_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnns3lNf_rsus5Pq-ZUfsS5oySTOId48M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
