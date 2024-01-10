@@ -116,11 +116,29 @@ class HomeView extends GetView<HomeController> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        backgroundColor: Colors.blue[900]),
                                     onPressed: controller.deleteNode,
-                                    child: const Text('Ignore')),
+                                    child: const Text('Ignore',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20))),
                                 ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        backgroundColor: Colors.blue[900]),
                                     onPressed: controller.callOnWhatsapp,
-                                    child: Text('Call ${controller.counter}'))
+                                    child: Text(
+                                        'Call in ${controller.counter} sec',
+                                        style: const TextStyle(
+                                            color: Colors.white, fontSize: 20)))
                               ],
                             ),
                     )),

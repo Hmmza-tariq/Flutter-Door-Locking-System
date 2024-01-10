@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
 class HomeController extends GetxController {
-  bool showDoorUnlocked = true;
+  bool showDoorUnlocked = false;
   bool iOpenedDoor = false;
   bool fromCamera = false;
   bool intruderAlert = false;
@@ -88,19 +88,23 @@ class HomeController extends GetxController {
   }
 
   void callOnWhatsapp() async {
-    print('callOnWhatsapp');
-
-    const link = WhatsAppUnilink(
-      phoneNumber: '++923404279353',
-      text: 'Intruder Alert!!!',
-    );
-    await launchUrl(Uri.parse(link.toString()));
+    String phoneNumber = '15';
+    if (await canLaunchUrl(Uri.parse('tel:$phoneNumber'))) {
+      intruderAlert = false;
+      deleteNode();
+      update();
+      await launchUrl(Uri.parse('tel:$phoneNumber'));
+    } else {
+      throw 'Could not launch $phoneNumber';
+    }
   }
 
   void timer() async {
     Future.delayed(const Duration(seconds: 20), () async {
-      callOnWhatsapp();
-      deleteNode();
+      if (intruderAlert) {
+        deleteNode();
+        callOnWhatsapp();
+      }
       update();
     });
   }
